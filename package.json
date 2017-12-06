@@ -1,0 +1,44 @@
+{
+  "name": "area-logger",
+  "version": "1.0.0",
+  "description": "Library for logging certain areas with suitable setup",
+  "main": "index.js",
+  "config": {
+    "sourceDir": "src",
+    "libDir": "lib"
+  },
+  "scripts": {
+    "remove-flow": "flow-remove-types $npm_package_config_sourceDir --out-dir $npm_package_config_libDir",
+    "uglify": "uglifyjs $npm_package_config_libDir/index.js -o $npm_package_config_libDir/index.js",
+    "build": "npm run remove-flow && npm run uglify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dima Pilipenko <dimpiax@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dimpiax/area-logger/issues"
+  },
+  "homepage": "https://github.com/dimpiax/area-logger#readme",
+  "keywords": [
+    "node",
+    "logger",
+    "area",
+    "level"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimpiax/area-logger.git"
+  },
+  "devDependencies": {
+    "babel-eslint": "8.0.3",
+    "eslint": "4.12.1",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-plugin-flowtype": "2.39.1",
+    "eslint-plugin-import": "2.8.0",
+    "flow-bin": "0.60.1",
+    "flow-remove-types": "1.2.3",
+    "linter-flow": "0.1.4",
+    "nodemon": "1.12.5",
+    "uglify-es": "3.2.1"
+  }
+}
